@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Unlimited - Retro Logo Variations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron:wght@400;700;900&family=Silkscreen:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spark-gold: #FFD700;
+            --spark-orange: #FF8C00;
+            --spark-red: #CC3300;
+            --spark-maroon: #660000;
+            --crt-green: #33FF33;
+            --crt-amber: #FFB000;
+            --vhs-blue: #0066CC;
+            --cassette-cream: #F5E6D3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            min-height: 100vh;
+            font-family: 'Share Tech Mono', monospace;
+            color: #ccc;
+            overflow-x: hidden;
+        }
+
+        /* Scanline overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, #1a0a0a 0%, #0a0a0a 100%);
+            border-bottom: 2px solid var(--spark-maroon);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--spark-gold);
+            text-shadow: 0 0 20px var(--spark-orange), 0 0 40px var(--spark-red);
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            padding: 60px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo-card {
+            background: #111;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-display {
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-info {
+            padding: 20px 25px;
+            background: #0d0d0d;
+            border-top: 1px solid #222;
+        }
+
+        .logo-info h3 {
+            font-family: 'Silkscreen', cursive;
+            font-size: 0.85rem;
+            color: var(--spark-gold);
+            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        .logo-info p {
+            font-size: 0.75rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ==================== */
+        /* 1. 8-BIT PIXEL ART */
+        /* ==================== */
+        .pixel-art {
+            background: linear-gradient(135deg, #1a0a2e 0%, #0d0d1a 100%);
+            image-rendering: pixelated;
+        }
+
+        .pixel-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pixel-spark {
+            display: flex;
+            gap: 4px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        .pixel-spark span {
+            display: inline-block;
+            color: var(--spark-gold);
+            text-shadow: 
+                4px 4px 0 var(--spark-red),
+                -2px -2px 0 var(--spark-orange);
+            animation: pixel-bounce 0.6s ease-in-out infinite;
+        }
+
+        .pixel-spark span:nth-child(1) { animation-delay: 0s; }
+        .pixel-spark span:nth-child(2) { animation-delay: 0.1s; }
+        .pixel-spark span:nth-child(3) { animation-delay: 0.2s; }
+        .pixel-spark span:nth-child(4) { animation-delay: 0.3s; }
+        .pixel-spark span:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes pixel-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .pixel-star {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .pixel-star::before,
+        .pixel-star::after {
+            content: '';
+            position: absolute;
+            background: var(--spark-gold);
+            box-shadow: 
+                0 0 10px var(--spark-gold),
+                0 0 20px var(--spark-orange);
+        }
+
+        .pixel-star::before {
+            width: 60px;
+            height: 12px;
+            top: 24px;
+            left: 0;
+        }
+
+        .pixel-star::after {
+            width: 12px;
+            height: 60px;
+            top: 0;
+            left: 24px;
+        }
+
+        .pixel-subtitle {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            color: #888;
+            letter-spacing: 0.2em;
+        }
+
+        /* ==================== */
+        /* 2. VHS GLITCH */
+        /* ==================== */
+        .vhs-style {
+            background: linear-gradient(180deg, #0a0a15 0%, #000510 100%);
+            position: relative;
+        }
+
+        .vhs-style::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent 0px,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+            pointer-events: none;
+        }
+
+        .vhs-logo {
+            position: relative;
+            text-align: center;
+        }
+
+        .vhs-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: white;
+            position: relative;
+            letter-spacing: 0.15em;
+        }
+
+        .vhs-text::before,
+        .vhs-text::after {
+            content: 'SPARK';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .vhs-text::before {
+            color: #ff0066;
+            animation: vhs-glitch-1 0.3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+        }
+
+        .vhs-text::after {
+            color: #00ffff;
+            animation: vhs-glitch-2 0.3s infinite;
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+        }
+
+        @keyframes vhs-glitch-1 {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-3px); }
+            40% { transform: translateX(3px); }
+            60% { transform: translateX(-1px); }
+            80% { transform: translateX(2px); }
+        }
+
+        @keyframes vhs-glitch-2 {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(2px); }
+            40% { transform: translateX(-2px); }
+            60% { transform: translateX(3px); }
+            80% { transform: translateX(-1px); }
+        }
+
+        .vhs-tracking {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .vhs-rec {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: #ff0000;
+        }
+
+        .vhs-rec::before {
+            content: '●';
+            animation: rec-blink 1s infinite;
+        }
+
+        @keyframes rec-blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* ==================== */
+        /* 3. CASSETTE TAPE */
+        /* ==================== */
+        .cassette-style {
+            background: linear-gradient(180deg, #2a2520 0%, #1a1510 100%);
+        }
+
+        .cassette-container {
+            width: 320px;
+            height: 200px;
+            background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 100%);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 
+                inset 0 2px 0 rgba(255,255,255,0.3),
+                inset 0 -2px 0 rgba(0,0,0,0.2),
+                0 10px 30px rgba(0,0,0,0.5);
+            padding: 15px;
+        }
+
+        .cassette-label {
+            background: linear-gradient(135deg, var(--spark-maroon) 0%, #440000 100%);
+            height: 100%;
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cassette-label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 3px,
+                    rgba(255,255,255,0.05) 3px,
+                    rgba(255,255,255,0.05) 4px
+                );
+        }
+
+        .cassette-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--spark-gold);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            letter-spacing: 0.2em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cassette-subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.3em;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cassette-holes {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 60px;
+        }
+
+        .cassette-hole {
+            width: 30px;
+            height: 30px;
+            background: #1a1510;
+            border-radius: 50%;
+            border: 3px solid #333;
+            position: relative;
+        }
+
+        .cassette-hole::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: #0a0a05;
+            border-radius: 50%;
+        }
+
+        .cassette-window {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 35px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 3px;
+            border: 2px solid #444;
+        }
+
+        /* ==================== */
+        /* 4. CRT MONITOR GREEN */
+        /* ==================== */
+        .crt-green {
+            background: #0a0a0a;
+            border: 20px solid #1a1a1a;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .crt-green::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 1px,
+                    rgba(0, 50, 0, 0.1) 1px,
+                    rgba(0, 50, 0, 0.1) 2px
+                );
+            pointer-events: none;
+            border-radius: 10px;
+        }
+
+        .crt-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .crt-logo {
+            font-family: 'VT323', monospace;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--crt-green);
+            text-shadow: 
+                0 0 10px var(--crt-green),
+                0 0 20px var(--crt-green),
+                0 0 40px var(--crt-green);
+            animation: crt-flicker 0.1s infinite;
+            letter-spacing: 0.2em;
+        }
+
+        @keyframes crt-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.98; }
+        }
+
+        .crt-cursor {
+            display: inline-block;
+            width: 20px;
+            height: 4px;
+            background: var(--crt-green);
+            margin-left: 10px;
+            animation: cursor-blink 1s step-end infinite;
+            box-shadow: 0 0 10px var(--crt-green);
+        }
+
+        @keyframes cursor-blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .crt-prompt {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--crt-green);
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        /* ==================== */
+        /* 5. CRT AMBER */
+        /* ==================== */
+        .crt-amber {
+            background: #0a0800;
+            border: 15px solid #222;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .crt-amber::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at center, rgba(255,176,0,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .amber-logo {
+            font-family: 'VT323', monospace;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--crt-amber);
+            text-shadow: 
+                0 0 5px var(--crt-amber),
+                0 0 15px var(--crt-amber),
+                0 0 30px rgba(255,176,0,0.5);
+            letter-spacing: 0.15em;
+        }
+
+        .amber-star {
+            color: var(--crt-amber);
+            font-size: 2rem;
+            text-shadow: 0 0 20px var(--crt-amber);
+            margin: 10px 0;
+        }
+
+        .amber-text {
+            font-family: 'VT323', monospace;
+            color: var(--crt-amber);
+            opacity: 0.6;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+        }
+
+        /* ==================== */
+        /* 6. ARCADE CABINET */
+        /* ==================== */
+        .arcade-style {
+            background: 
+                linear-gradient(180deg, #1a0033 0%, #0d001a 100%);
+            position: relative;
+        }
+
+        .arcade-style::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,0,100,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(0,200,255,0.1) 0%, transparent 40%);
+        }
+
+        .arcade-logo {
+            position: relative;
+            text-align: center;
+        }
+
+        .arcade-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            background: linear-gradient(180deg, 
+                #fff 0%, 
+                var(--spark-gold) 30%, 
+                var(--spark-orange) 60%, 
+                var(--spark-red) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 4px 0 #000) drop-shadow(0 0 20px var(--spark-orange));
+            letter-spacing: 0.1em;
+        }
+
+        .arcade-star-burst {
+            width: 80px;
+            height: 80px;
+            margin: 15px auto;
+            position: relative;
+            animation: star-rotate 10s linear infinite;
+        }
+
+        @keyframes star-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .arcade-star-burst::before,
+        .arcade-star-burst::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(180deg, #fff 0%, var(--spark-gold) 50%, var(--spark-orange) 100%);
+        }
+
+        .arcade-star-burst::before {
+            width: 80px;
+            height: 16px;
+            clip-path: polygon(0 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
+            transform: translate(-50%, -50%) scale(1);
+            width: 80px;
+            height: 80px;
+        }
+
+        .arcade-star-burst::after {
+            width: 80px;
+            height: 80px;
+            clip-path: polygon(0 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .arcade-credits {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            color: #ff0066;
+            animation: credits-blink 1.5s infinite;
+            margin-top: 15px;
+        }
+
+        @keyframes credits-blink {
+            0%, 70% { opacity: 1; }
+            71%, 100% { opacity: 0; }
+        }
+
+        /* ==================== */
+        /* 7. COMMODORE 64 */
+        /* ==================== */
+        .c64-style {
+            background: #4040e8;
+            border: 20px solid #a0a0ff;
+        }
+
+        .c64-content {
+            text-align: center;
+        }
+
+        .c64-header {
+            font-family: 'VT323', monospace;
+            font-size: 0.8rem;
+            color: #a0a0ff;
+            margin-bottom: 20px;
+        }
+
+        .c64-logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #a0a0ff;
+            letter-spacing: 0.05em;
+        }
+
+        .c64-star {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        .c64-ready {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: #a0a0ff;
+            margin-top: 20px;
+        }
+
+        .c64-cursor {
+            display: inline-block;
+            width: 12px;
+            height: 16px;
+            background: #a0a0ff;
+            animation: cursor-blink 0.5s step-end infinite;
+        }
+
+        /* ==================== */
+        /* 8. VECTREX / VECTOR */
+        /* ==================== */
+        .vector-style {
+            background: #000;
+            position: relative;
+        }
+
+        .vector-logo {
+            text-align: center;
+        }
+
+        .vector-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            color: transparent;
+            letter-spacing: 0.3em;
+            -webkit-text-stroke: 2px #00ff88;
+            text-shadow: 
+                0 0 10px #00ff88,
+                0 0 20px #00ff88,
+                0 0 40px #00ff88;
+            animation: vector-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes vector-glow {
+            0%, 100% { 
+                filter: brightness(1); 
+                -webkit-text-stroke: 2px #00ff88;
+            }
+            50% { 
+                filter: brightness(1.3); 
+                -webkit-text-stroke: 2px #88ffbb;
+            }
+        }
+
+        .vector-star {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .vector-star svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .vector-line {
+            stroke: #00ff88;
+            stroke-width: 2;
+            fill: none;
+            filter: drop-shadow(0 0 5px #00ff88) drop-shadow(0 0 10px #00ff88);
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: vector-draw 2s ease-out forwards;
+        }
+
+        @keyframes vector-draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* ==================== */
+        /* 9. GAME BOY */
+        /* ==================== */
+        .gameboy-style {
+            background: #9bbc0f;
+        }
+
+        .gameboy-screen {
+            background: #0f380f;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .gameboy-logo {
+            text-align: center;
+        }
+
+        .gb-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #9bbc0f;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 0 #306230;
+        }
+
+        .gb-star {
+            width: 50px;
+            height: 50px;
+            margin: 15px auto;
+            position: relative;
+        }
+
+        .gb-star::before,
+        .gb-star::after {
+            content: '';
+            position: absolute;
+            background: #9bbc0f;
+        }
+
+        .gb-star::before {
+            width: 50px;
+            height: 10px;
+            top: 20px;
+            left: 0;
+        }
+
+        .gb-star::after {
+            width: 10px;
+            height: 50px;
+            top: 0;
+            left: 20px;
+        }
+
+        .gb-subtitle {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            color: #306230;
+            letter-spacing: 0.1em;
+        }
+
+        /* ==================== */
+        /* 10. SYNTHWAVE / OUTRUN */
+        /* ==================== */
+        .synthwave-style {
+            background: linear-gradient(180deg, 
+                #0a0015 0%, 
+                #1a0030 30%,
+                #2d1b4e 60%,
+                #ff6b9d 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        .synthwave-style::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    transparent 40px,
+                    rgba(255,100,200,0.3) 40px,
+                    rgba(255,100,200,0.3) 41px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 20px,
+                    rgba(255,100,200,0.2) 20px,
+                    rgba(255,100,200,0.2) 21px
+                );
+            transform: perspective(200px) rotateX(60deg);
+            transform-origin: bottom;
+        }
+
+        .synthwave-sun {
+            width: 150px;
+            height: 75px;
+            background: linear-gradient(180deg,
+                #ffeb00 0%,
+                #ff9500 30%,
+                #ff4d6d 60%,
+                #c026d3 100%
+            );
+            border-radius: 150px 150px 0 0;
+            position: absolute;
+            bottom: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        .synthwave-sun::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent 0px,
+                transparent 8px,
+                #0a0015 8px,
+                #0a0015 12px
+            );
+        }
+
+        .synthwave-logo {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .synth-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(180deg, #fff 0%, #ff6ec7 50%, #7873f5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.2em;
+            filter: drop-shadow(0 0 20px #ff6ec7);
+        }
+
+        .synth-unlimited {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            color: #00f0ff;
+            letter-spacing: 0.5em;
+            text-shadow: 0 0 10px #00f0ff;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px 60px;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 0.2em;
+        }
+
+        @media (max-width: 480px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 30px;
+            }
+
+            .cassette-container {
+                width: 280px;
+                height: 175px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SPARK UNLIMITED</h1>
+        <p>Logo Variations • Retro Tech Series</p>
+    </header>
+
+    <div class="logo-grid">
+        <!-- 1. 8-Bit Pixel Art -->
+        <div class="logo-card">
+            <div class="logo-display pixel-art">
+                <div class="pixel-logo">
+                    <div class="pixel-spark">
+                        <span>S</span><span>P</span><span>A</span><span>R</span><span>K</span>
+                    </div>
+                    <div class="pixel-star"></div>
+                    <div class="pixel-subtitle">UNLIMITED</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>8-BIT PIXEL ART</h3>
+                <p>NES/Famicom era styling with chunky pixels and limited color palette. Classic platformer title screen aesthetic.</p>
+            </div>
+        </div>
+
+        <!-- 2. VHS Glitch -->
+        <div class="logo-card">
+            <div class="logo-display vhs-style">
+                <div class="vhs-rec">REC</div>
+                <div class="vhs-logo">
+                    <div class="vhs-text">SPARK</div>
+                </div>
+                <div class="vhs-tracking">TRACKING ▶▶</div>
+            </div>
+            <div class="logo-info">
+                <h3>VHS GLITCH</h3>
+                <p>Analog video distortion with RGB separation and tracking artifacts. Magnetic tape degradation aesthetics.</p>
+            </div>
+        </div>
+
+        <!-- 3. Cassette Tape -->
+        <div class="logo-card">
+            <div class="logo-display cassette-style">
+                <div class="cassette-container">
+                    <div class="cassette-label">
+                        <div class="cassette-title">SPARK</div>
+                        <div class="cassette-subtitle">UNLIMITED • 2002</div>
+                        <div class="cassette-window"></div>
+                    </div>
+                    <div class="cassette-holes">
+                        <div class="cassette-hole"></div>
+                        <div class="cassette-hole"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>CASSETTE TAPE LABEL</h3>
+                <p>Audio cassette J-card design. Cream plastic housing with printed label insert styling.</p>
+            </div>
+        </div>
+
+        <!-- 4. CRT Green Phosphor -->
+        <div class="logo-card">
+            <div class="logo-display crt-green">
+                <div class="crt-content">
+                    <div class="crt-logo">SPARK<span class="crt-cursor"></span></div>
+                    <div class="crt-prompt">C:\UNLIMITED\>_</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>CRT GREEN PHOSPHOR</h3>
+                <p>Monochrome P1 green phosphor terminal display. IBM PC era command line interface.</p>
+            </div>
+        </div>
+
+        <!-- 5. CRT Amber -->
+        <div class="logo-card">
+            <div class="logo-display crt-amber">
+                <div class="crt-content">
+                    <div class="amber-logo">SPARK</div>
+                    <div class="amber-star">✦</div>
+                    <div class="amber-text">UNLIMITED SYSTEMS</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>CRT AMBER PHOSPHOR</h3>
+                <p>P3 amber phosphor monochrome display. Warm orange glow of early business terminals.</p>
+            </div>
+        </div>
+
+        <!-- 6. Arcade Cabinet -->
+        <div class="logo-card">
+            <div class="logo-display arcade-style">
+                <div class="arcade-logo">
+                    <div class="arcade-text">SPARK</div>
+                    <div class="arcade-star-burst"></div>
+                    <div class="arcade-credits">INSERT COIN</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>ARCADE CABINET</h3>
+                <p>Golden age arcade attract mode. Gradient chrome text with rotating starburst effects.</p>
+            </div>
+        </div>
+
+        <!-- 7. Commodore 64 -->
+        <div class="logo-card">
+            <div class="logo-display c64-style">
+                <div class="c64-content">
+                    <div class="c64-header">**** COMMODORE 64 BASIC V2 ****</div>
+                    <div class="c64-logo">SPARK</div>
+                    <div class="c64-star">★</div>
+                    <div class="c64-logo" style="font-size: 0.7rem;">UNLIMITED</div>
+                    <div class="c64-ready">READY.<br><span class="c64-cursor"></span></div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>COMMODORE 64</h3>
+                <p>Classic C64 boot screen. Iconic blue background with light blue PETSCII-style text.</p>
+            </div>
+        </div>
+
+        <!-- 8. Vectrex Vector Graphics -->
+        <div class="logo-card">
+            <div class="logo-display vector-style">
+                <div class="vector-logo">
+                    <div class="vector-text">SPARK</div>
+                    <div class="vector-star">
+                        <svg viewBox="0 0 100 100">
+                            <line class="vector-line" x1="50" y1="0" x2="50" y2="100"/>
+                            <line class="vector-line" x1="0" y1="50" x2="100" y2="50" style="animation-delay: 0.2s"/>
+                            <line class="vector-line" x1="15" y1="15" x2="85" y2="85" style="animation-delay: 0.4s"/>
+                            <line class="vector-line" x1="85" y1="15" x2="15" y2="85" style="animation-delay: 0.6s"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>VECTREX / VECTOR</h3>
+                <p>Line-drawn vector graphics with phosphor glow. Asteroids and Battlezone CRT aesthetic.</p>
+            </div>
+        </div>
+
+        <!-- 9. Game Boy -->
+        <div class="logo-card">
+            <div class="logo-display gameboy-style">
+                <div class="gameboy-screen">
+                    <div class="gameboy-logo">
+                        <div class="gb-text">SPARK</div>
+                        <div class="gb-star"></div>
+                        <div class="gb-subtitle">UNLIMITED</div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>GAME BOY</h3>
+                <p>4-shade green LCD display. DMG-01 dot matrix screen with characteristic color palette.</p>
+            </div>
+        </div>
+
+        <!-- 10. Synthwave / Outrun -->
+        <div class="logo-card">
+            <div class="logo-display synthwave-style">
+                <div class="synthwave-sun"></div>
+                <div class="synthwave-logo">
+                    <div class="synth-text">SPARK</div>
+                    <div class="synth-unlimited">UNLIMITED</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h3>SYNTHWAVE / OUTRUN</h3>
+                <p>80s retrofuturism with neon gradients, chrome text, and perspective grid horizon.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>SPARK UNLIMITED • ORIGINAL LOGO 2002 • RETRO VARIATIONS 2026</p>
+    </footer>
+</body>
+</html>
